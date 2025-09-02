@@ -1,4 +1,4 @@
-Bienvenido al simulador de riesgos de PRL, contesta las diversas situaciones de riesgo e identifica la mejor solución
+Bienvenido al simulador de seguridad de PRL, situate en los distintos escenarios e identifica la mejor solución.
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
