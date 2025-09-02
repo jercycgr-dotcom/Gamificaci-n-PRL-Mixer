@@ -70,11 +70,6 @@
       color: #fff;
     }
 
-    .partial {
-      background-color: #FF9800;
-      color: #fff;
-    }
-
     .incorrect {
       background-color: #f44336;
       color: #fff;
@@ -121,7 +116,6 @@
       transition: width 0.5s;
     }
 
-    /* Revisión de respuestas con texto en negro */
     .review-box {
       border-left: 8px solid #ccc;
       background: #f9f9f9;
@@ -129,12 +123,11 @@
       margin: 10px 0;
       border-radius: 8px;
       text-align: left;
-      color: #000; /* Texto en negro */
+      color: #000; /* Texto negro */
     }
 
-    .review-box.correct { border-color: #4CAF50; }
-    .review-box.partial { border-color: #FF9800; }
     .review-box.incorrect { border-color: #f44336; }
+    /* Las parciales no tienen borde especial */
   </style>
 </head>
 <body>
@@ -161,8 +154,8 @@
         q: "Escenario 2: Vas a mover un palet pesado. ¿Qué harías?",
         emoji: "📦",
         options: [
-          { text: "Pedir ayuda", type: "correct", feedback: "¡Bien! Usar ayuda protege tu espalda." },
           { text: "Levantar el palet solo", type: "incorrect", feedback: "Nunca levantes cargas pesadas solo." },
+          { text: "Pedir ayuda", type: "correct", feedback: "¡Bien! Usar ayuda protege tu espalda." },
           { text: "Inclinarse para levantar el palet solo", type: "partial", feedback: "Podrías lastimarte la espalda." }
         ]
       },
@@ -170,63 +163,63 @@
         q: "Escenario 3: Vas a manipular una máquina en funcionamiento. ¿Qué debes hacer?",
         emoji: "⚙️",
         options: [
-          { text: "Seguir el procedimiento establecido", type: "correct", feedback: "¡Bien! Seguir procedimientos evita accidentes." },
           { text: "Ignorar el procedimiento, la experiencia es mejor", type: "incorrect", feedback: "Ignorar procedimientos es muy peligroso." },
-          { text: "Si ya sabes como hacerlo no hay que seguir el procedimiento", type: "partial", feedback: "Puedes sufrir un atrapamiento." }
+          { text: "Si ya sabes como hacerlo no hay que seguir el procedimiento", type: "partial", feedback: "Puedes sufrir un atrapamiento." },
+          { text: "Seguir el procedimiento establecido", type: "correct", feedback: "¡Bien! Seguir procedimientos evita accidentes." }
         ]
       },
       {
-        q: "Escenario 4: Estoy trabajando en una máquina y quito la seguridad de máquina. ¿Qué debo hacer?",
+        q: "Escenario 4: Estoy trabajando en una máquina y quito la seguridad de la misma. ¿Qué debo hacer?",
         emoji: "🔒",
         options: [
+          { text: "Quitarlas y trabajar con cuidado", type: "incorrect", feedback: "Muy peligroso." },
           { text: "Nunca quitar las seguridades", type: "correct", feedback: "¡Bien! Nunca se deben quitar." },
-          { text: "Quitarlas si la operación es rápida", type: "partial", feedback: "Aun así aumenta riesgo." },
-          { text: "Quitarlas y trabajar con cuidado", type: "incorrect", feedback: "Muy peligroso." }
+          { text: "Quitarlas si la operación es rápida", type: "partial", feedback: "Aun así aumenta riesgo." }
         ]
       },
       {
         q: "Escenario 5: Estoy en el lavadero y voy a limpiar un tanque metálico con agua caliente. ¿Qué debo hacer?",
         emoji: "💧🔥",
         options: [
-          { text: "Usar EPIs adecuados para trabajos con altas temperaturas", type: "correct", feedback: "¡Bien! Previene quemaduras." },
           { text: "La tarea es rápida y pierdo tiempo si me pongo los EPIs", type: "incorrect", feedback: "Riesgo de quemadura." },
-          { text: "Únicamente uso guantes de protección", type: "partial", feedback: "No garantiza protección total, pueden hacer salpicaduras en el rostro." }
+          { text: "Usar EPIs adecuados para trabajos con altas temperaturas", type: "correct", feedback: "¡Bien! Previene quemaduras." },
+          { text: "Únicamente uso guantes de protección", type: "partial", feedback: "No garantiza protección total." }
         ]
       },
       {
         q: "Escenario 6: Te encuentras caminando en zona de riesgo, hay poco espacio y mucho material acumulado. ¿Qué debo hacer?",
         emoji: "🪑📏",
         options: [
-          { text: "Mantener la distancia del material", type: "correct", feedback: "¡Bien! Evita golpes." },
           { text: "Ese tipo de material no produce accidentes, es algo rutinario", type: "incorrect", feedback: "Provoca accidentes." },
-          { text: "Mover material/muebles sin comunicar a nadie", type: "partial", feedback: "Riesgo de accidente." }
+          { text: "Mover material/muebles sin comunicar a nadie", type: "partial", feedback: "Riesgo de accidente." },
+          { text: "Mantener la distancia del material", type: "correct", feedback: "¡Bien! Evita golpes." }
         ]
       },
       {
         q: "Escenario 7: Te encuentras trabajando en una línea y al intentar tomar un frasco sobrepasas el área de trabajo/cintas transportadoras. ¿Qué debiste haber hecho?",
         emoji: "📦↗️",
         options: [
-          { text: "Nunca sobrepasar las cintas transportadoras", type: "correct", feedback: "¡Bien! Evita lesiones." },
-          { text: "Estirarse para tomar el frasco, la acción es rápida y nunca sucede nada", type: "incorrect", feedback: "Riesgo de tirones y atrapamiento" },
-          { text: "Nuestras cintas transportadoras no producen atrapamientos", type: "partial", feedback: "Todas las cintas transportadoras pueden provocar atrapamientos." }
+          { text: "Estirarse para tomar el frasco, la acción es rápida y nunca sucede nada", type: "incorrect", feedback: "Riesgo de tirones y atrapamiento." },
+          { text: "Nuestras cintas transportadoras no producen atrapamientos", type: "partial", feedback: "Todas las cintas transportadoras pueden provocar atrapamientos." },
+          { text: "Nunca sobrepasar las cintas transportadoras", type: "correct", feedback: "¡Bien! Evita lesiones." }
         ]
       },
       {
         q: "Escenario 8: Estamos en el área de envasado y nos encontramos con palets y cajas en el pasillo. ¿Qué debemos hacer?",
         emoji: "📦",
         options: [
-          { text: "Mantener despejado el área de tránsito", type: "correct", feedback: "¡Bien! Previene caídas." },
           { text: "Saltar entre palets", type: "incorrect", feedback: "Peligro, has tenido un accidente." },
-          { text: "Pasar de largo y no comunicar a nadie", type: "partial", feedback: "La acumulación de material en los pasillos aumenta el riesgo de caída." }
+          { text: "Mantener despejado el área de tránsito", type: "correct", feedback: "¡Bien! Previene caídas." },
+          { text: "Pasar de largo y no comunicar a nadie", type: "partial", feedback: "La acumulación en los pasillos aumenta el riesgo de caída." }
         ]
       },
       {
         q: "Escenario 9: Estoy paletizando y comienzo a sentir molestias en la espalda. ¿Qué debo hacer?",
         emoji: "💪📦",
         options: [
-          { text: "Usar la técnica correcta de levantamiento", type: "correct", feedback: "¡Bien! Evita lesiones lumbares." },
-          { text: "Continuar el trabajo sin comunicar a nadie de la molestia", type: "incorrect", feedback: "Peligro, provoca dolor y puede agravar la lesión." },
-          { text: "No usar ayudas mecánicas como traspalet elevadores, demora demasiado", type: "partial", feedback: "Estás a punto de tener una lesión." }
+          { text: "Continuar el trabajo sin comunicar a nadie de la molestia", type: "incorrect", feedback: "Provoca dolor y puede agravar la lesión." },
+          { text: "No usar ayudas mecánicas como traspalet elevadores, demora demasiado", type: "partial", feedback: "Estás a punto de tener una lesión." },
+          { text: "Usar la técnica correcta de levantamiento", type: "correct", feedback: "¡Bien! Evita lesiones lumbares." }
         ]
       },
       {
@@ -246,93 +239,84 @@
     let userAnswers = [];
 
     function showQuestion() {
-      const quizDiv = document.getElementById('quiz');
-      quizDiv.innerHTML = "";
+      const quiz = document.getElementById('quiz');
+      quiz.innerHTML = '';
       if (current < questions.length) {
         const q = questions[current];
         const qDiv = document.createElement('div');
         qDiv.className = 'question';
         qDiv.innerHTML = `<h2>${q.q}</h2><div class="emoji">${q.emoji}</div>`;
-        const optionsDiv = document.createElement('div');
-        optionsDiv.className = 'options';
+        const optDiv = document.createElement('div');
+        optDiv.className = 'options';
         q.options.forEach(opt => {
           const btn = document.createElement('button');
           btn.textContent = opt.text;
           btn.onclick = () => handleAnswer(opt, btn);
-          optionsDiv.appendChild(btn);
+          optDiv.appendChild(btn);
         });
-        qDiv.appendChild(optionsDiv);
-        quizDiv.appendChild(qDiv);
+        qDiv.appendChild(optDiv);
+        quiz.appendChild(qDiv);
         updateProgress();
-      } else {
-        showScore();
-      }
+      } else showScore();
     }
 
-    function handleAnswer(selectedOption, selectedBtn) {
-      const { type, feedback } = selectedOption;
-
-      if (type === 'correct') score += 10;
-      else if (type === 'partial') score += 5;
+    function handleAnswer(opt, btn) {
+      if (opt.type === 'correct') score += 10;
+      else if (opt.type === 'partial') score += 5;
 
       userAnswers.push({
         question: questions[current].q,
         emoji: questions[current].emoji,
-        selected: selectedOption.text,
-        type: selectedOption.type,
-        feedback: selectedOption.feedback
+        selected: opt.text,
+        type: opt.type,
+        feedback: opt.feedback
       });
 
-      const buttons = selectedBtn.parentNode.querySelectorAll('button');
-      buttons.forEach(b => {
+      const allBtns = btn.parentNode.querySelectorAll('button');
+      allBtns.forEach(b => {
         b.disabled = true;
-        const option = questions[current].options.find(opt => opt.text === b.textContent);
-        if (option) b.classList.add(option.type);
+        const o = questions[current].options.find(x => x.text === b.textContent);
+        if (o.type === 'correct') b.classList.add('correct');
+        if (o.type === 'incorrect') b.classList.add('incorrect');
       });
 
-      selectedBtn.style.opacity = '1';
+      btn.style.opacity = '1';
+      const f = document.createElement('div');
+      f.className = 'feedback show';
+      f.textContent = opt.feedback;
+      btn.parentNode.appendChild(f);
 
-      const feedbackDiv = document.createElement('div');
-      feedbackDiv.className = 'feedback show';
-      feedbackDiv.textContent = feedback;
-      selectedBtn.parentNode.appendChild(feedbackDiv);
-
-      setTimeout(nextQuestion, 2000);
-    }
-
-    function nextQuestion() {
-      current++;
-      showQuestion();
+      setTimeout(() => { current++; showQuestion(); }, 2000);
     }
 
     function showScore() {
-      const quizDiv = document.getElementById('quiz');
+      const quiz = document.getElementById('quiz');
       ranking.push(score);
       ranking.sort((a, b) => b - a);
 
-      let reviewHTML = `<div style="margin-top:30px;"><h3>Revisión de respuestas con errores</h3>`;
+      let review = '<div style="margin-top:30px;"><h3>Revisión de respuestas no completamente correctas</h3>';
       userAnswers.forEach(ans => {
-        if (ans.type !== 'correct') {
-          reviewHTML += `
-            <div class="review-box ${ans.type}">
-              <div><strong>${ans.emoji} ${ans.question}</strong></div>
-              <div><strong>Tu respuesta:</strong> <span class="${ans.type}">${ans.selected}</span></div>
-              <div><strong>Feedback:</strong> ${ans.feedback}</div>
-            </div>`;
+        if (ans.type === 'incorrect' || ans.type === 'partial') {
+          review += `<div class="review-box ${ans.type === 'incorrect' ? 'incorrect' : ''}">
+            <div><strong>${ans.emoji} ${ans.question}</strong></div>
+            <div><strong>Tu respuesta:</strong> ${ans.selected}</div>
+            <div><strong>Feedback:</strong> ${ans.feedback}</div>
+          </div>`;
         }
       });
-      reviewHTML += `</div>`;
+      review += '</div>';
 
-      quizDiv.innerHTML = `
+      quiz.innerHTML = `
         <div class="score">¡Has completado el simulador!<br>Tu puntuación: ${score} / ${questions.length * 10}</div>
-        <div class="ranking">Top puntuaciones: ${ranking.slice(0, 5).join(" - ")}</div>
+        <div class="ranking">Top puntuaciones: ${ranking.slice(0, 5).join(' - ')}</div>
         <div style="margin-top:15px;">Revisa los escenarios donde obtuviste menos puntos y refuerza las medidas de seguridad. ¡La prevención salva vidas!</div>
-        ${reviewHTML}
+        ${review}
       `;
     }
 
     function updateProgress() {
-      document.getElementById('progress').style.width = ((current / questions.length) * 100) + '%';
+      const bar = document.getElementById('progress');
+      bar.style.width = `${(current / questions.length) * 100}%`;
     }
 
     showQuestion();
