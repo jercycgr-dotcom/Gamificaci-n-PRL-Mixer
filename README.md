@@ -142,7 +142,7 @@ Bienvenido al simulador de seguridad de PRL, situate en los distintos escenarios
   <script>
     const questions = [
       {
-        q: "Escenario 1: Estás usando las escaleras de acceso a Mixer & Pack. ¿Como deberiamos usarlas para evitar caídas?",
+        q: "Escenario 1: Estás usando las escaleras de acceso a Mixer & Pack. ¿Qué deberiamos hacer para evitar caídas?",
         emoji: "🏬🪜",
         options: [
           { text: "Bajar/subir rápido sin usar pasamanos", type: "incorrect", feedback: "Bajar sin sujetarte es peligroso." },
